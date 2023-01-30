@@ -8,9 +8,19 @@ while operation not in[1, 2, 3, 4]:
     print("Niepoprawne działanie!")
     exit(1)
 
-x = float(input("Podaj składnik 1: "))
-y = float(input("Podaj składnik 2: "))
+def check_if_number(input):
+    try:
+        val = float(input)
+    except ValueError:
+        print("To nie jest liczba!")
+        exit(1)
 
+x = input("Podaj składnik 1: ")
+check_if_number(x)
+y = input("Podaj składnik 2: ")
+check_if_number(y)
+x = float(x)
+y = float(y)
 def addition(x, y):
     logging.debug(f"Dodaję %g i %g", x, y)
     addition_result = x + y
