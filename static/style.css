@@ -1,0 +1,28 @@
+h1 {
+    color: pink;
+    font-size: 40px;
+    background-color: wheat;
+    width: 23%;
+}
+img {
+    width: 200px;
+}
+h2 {
+    color: greenyellow;
+    font-size: 30px;
+}
+a {
+    font-size: 20px;
+}
+body {
+    background-color: gray;
+}
+ul {
+    font-size: 20px;
+}
+form {
+    font-size: 20px;
+}
+div {
+    font-size: 20px;
+}
