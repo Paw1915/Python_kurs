@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            background-color:powderblue;
+            font-size: larger;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('document').ready(function(){
+            $('#res').click(function(){
+                var quantity = parseInt($('#quantity').val());
+                var result;
+
+                    if($('#code').val() =="USD"){
+                        result=quantity*4.38;
+                    }
+                    else if($('#code').val() =="AUD"){
+                        result=quantity*2.94;
+                    }
+                    else if($('#code').val() =="CAD"){
+                        result=quantity*3.21;
+                    }
+                    else if($('#code').val() =="EUR"){
+                        result=quantity*4.64;
+                    }
+                    else if($('#code').val() =="HUF"){
+                        result=quantity*0.01;
+                    }
+                    else if($('#code').val() =="CHF"){
+                        result=quantity*4.65;
+                    }
+                    else if($('#code').val() =="GBP"){
+                        result=quantity*5.22;
+                    }
+                    else if($('#code').val() =="JPY"){
+                        result=quantity*0.03;
+                    }
+                    else if($('#code').val() =="CZK"){
+                        result=quantity*0.19;
+                    }
+                    else if($('#code').val() =="DKK"){
+                        result=quantity*0.62;
+                    }
+                    else if($('#code').val() =="NOK"){
+                        result=quantity*0.41;
+                    }
+                    else{
+                        result=quantity*0.41;
+                    }
+
+                    $('#display').html(result);
+            })
+        })
+    </script>
+<body>
+    <h1>Konwerter walut</h1>
+    <form name="calc" id="calc">
+        <label for="code">Wybierz walutę:</label>
+        <select name="code" id="code" form="calc">
+            <option value="USD">Dolar amerykański</option>
+            <option value="AUD">Dolar australijski</option>
+            <option value="CAD">Dolar kanadyjski</option>
+            <option value="EUR">Euro</option>
+            <option value="HUF">Forint (Węgry)</option>
+            <option value="CHF">Frank szwajcarski</option>
+            <option value="GBP">Funt szterling</option>
+            <option value="JPY">Jen (Japonia)</option>
+            <option value="CZK">Korona czeska</option>
+            <option value="DKK">Korona duńska</option>
+            <option value="NOK">Korona norweska</option>
+            <option value="SEK">Korona szwedzka</option>
+        </select> <br><br>
+        <label for="quantity">Wpisz ilość waluty:</label>
+        <input type="number" name="quantity" id="quantity">
+        
+
+        <button type="button" id="res">Przelicz</button><br><br>
+
+        <textarea name="display" id="display" cols="20" rows="1" >Wartość w PLN</textarea> 
+    </form>
+</body>
+</html>
