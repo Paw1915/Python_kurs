@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kolekcja płyt</title>
+    <style>
+        table, th, tr, td {border: 1px solid black;}
+    </style>
+</head>
+
+<h2>Płyty w kolekcji:</h2>
+
+<table>
+    <thead>
+    <th>Tytuł</th>
+    <th>Artysta</th>
+    <th>W folii?</th>
+    </thead>
+{% for disc in discs %}
+    <tr>
+        <td><a href="/discs/{{ loop.index }}">{{ disc.title }}</a></td>
+        <td>{{ disc.artist }}</td>
+        <td>{{ disc.unpacked }}</td>
+    </tr>
+{% endfor %}
+</table>
+<div>
+    <h2> Dodaj nowe zadanie: </h2>
+    <form method="POST" action="/discs/">
+        {{ form.hidden_tag() }}
+        <table>
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                <tr>
+                    <th>{{ field.label }} {% if field.flags.required %}*{% endif %}</th>
+                    <td>{{ field }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Dodaj">
+    </form>
+</div>
+</body>
+</html>
